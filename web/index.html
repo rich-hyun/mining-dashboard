@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mustree Wrap · VRSC ↔ mVRSC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#/">
+      <span class="mark">M</span>
+      <span>Mustree Wrap</span>
+    </a>
+    <nav id="nav">
+      <a href="#/">대시보드</a>
+      <a href="#/mining">채굴</a>
+      <a href="#/wrap">래핑</a>
+      <a href="#/unwrap">언래핑</a>
+      <a href="#/history">내역</a>
+      <a href="#/admin" class="muted">관리자</a>
+    </nav>
+    <button id="connectBtn" class="btn small">지갑 연결</button>
+  </header>
+
+  <main id="view" aria-live="polite"></main>
+
+  <div id="toast" role="status"></div>
+
+  <footer class="foot">
+    VRSC(Verus)를 1:1 담보로 VYD 체인(Chain ID 7603)에서 발행되는 래핑 토큰 · 준비금은 대시보드에서 실시간 확인
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+services:
+  bridge:
+    build: ./bridge
+    restart: unless-stopped
+    # 호스트의 verusd(127.0.0.1:27486)에 바로 붙기 위해 호스트 네트워크 사용.
+    # API는 127.0.0.1:8787 에만 열리고, 외부 공개는 호스트 nginx가 담당.
+    network_mode: host
+    env_file: ./bridge/.env
+    environment:
+      HOST: 127.0.0.1
+      DB_PATH: /app/data/bridge.db
+    volumes:
+      - ./bridge/data:/app/data
+    logging:
+      driver: json-file
+      options: { max-size: "20m", max-file: "5" }

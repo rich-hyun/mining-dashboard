@@ -1,0 +1,17 @@
+{
+  "name": "mustree-wrap-bridge",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.4",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "mustree-wrap-contracts",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:vyd": "hardhat run scripts/deploy.js --network vyd",
+    "grant:vyd": "hardhat run scripts/grant-minter.js --network vyd"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0",
+    "dotenv": "^16.4.5"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.0.2"
+  }
+}

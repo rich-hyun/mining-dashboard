@@ -1,0 +1,6 @@
+node_modules/
+.env
+bridge/data/
+contracts/artifacts/
+contracts/cache/
+contracts/typechain-types/

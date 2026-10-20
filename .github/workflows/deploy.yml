@@ -1,0 +1,40 @@
+name: Deploy Mustree Wrap
+
+on:
+  push:
+    branches: [main]
+    paths: ["web/**", "bridge/**", "docker-compose.yml"]
+  workflow_dispatch:
+
+# 저장소 Settings → Secrets and variables → Actions
+#   Variables: SSH_HOST, SSH_USER, APP_DIR(/opt/mustree-wrap)
+#   Secrets:   SSH_KEY (배포용 개인키)
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ vars.SSH_HOST != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: SSH 키 설정
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "${{ vars.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: 파일 동기화 (.env·DB는 서버에만 존재 → 제외)
+        run: |
+          rsync -az --delete \
+            --exclude '.git' --exclude 'bridge/.env' --exclude 'bridge/data' \
+            --exclude 'contracts/node_modules' --exclude 'contracts/.env' \
+            ./ "${{ vars.SSH_USER }}@${{ vars.SSH_HOST }}:${{ vars.APP_DIR }}/"
+
+      - name: 웹 반영 + 브리지 재시작
+        run: |
+          ssh "${{ vars.SSH_USER }}@${{ vars.SSH_HOST }}" "
+            set -e
+            sudo rsync -a --delete ${{ vars.APP_DIR }}/web/ /var/www/mustree-wrap/
+            cd ${{ vars.APP_DIR }} && sudo docker compose up -d --build
+            sleep 5 && curl -fsS http://127.0.0.1:8787/api/health
+          "
