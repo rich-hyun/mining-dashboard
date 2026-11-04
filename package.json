@@ -1,0 +1,34 @@
+{
+  "name": "mst-mining-dashboard",
+  "version": "0.1.0",
+  "description": "MST(머스트셈) 채굴 처리량 시험: 보상 컨트랙트, 웹 대시보드, 해시레이트 벤치마크",
+  "scripts": {
+    "compile": "hardhat compile && node scripts/export-abi.js",
+    "test": "hardhat test",
+    "gen:keccak": "node tools/gen-keccak.js",
+    "deploy:mustsem": "hardhat run scripts/deploy.js --network mustsem",
+    "bench": "node tools/bench.js",
+    "estimate": "node tools/estimate.js",
+    "serve": "python -m http.server 8080 --directory web"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rich-hyun/mining-dashboard.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/rich-hyun/mining-dashboard/issues"
+  },
+  "homepage": "https://github.com/rich-hyun/mining-dashboard#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
+    "@openzeppelin/contracts": "5.0.2",
+    "chai": "^4.5.0",
+    "ethers": "^6.13.4",
+    "hardhat": "^2.22.17"
+  },
+  "private": true
+}

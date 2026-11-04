@@ -1,0 +1,5 @@
+measured_at,device,cpu_model,logical_cores,gpu,threads,seconds,total_hashes,hashes_per_sec,hps_per_thread,watts,hashes_per_joule,platform,runtime
+2026-11-04T07:06:15.407Z,dev-laptop-01,11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz,8,,1,20.02,6680000,333669,333669,,,win32-x64,node-v22.20.0
+2026-11-04T07:06:35.978Z,dev-laptop-01,11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz,8,,2,20.03,11380000,568233,284116,,,win32-x64,node-v22.20.0
+2026-11-04T07:06:56.544Z,dev-laptop-01,11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz,8,,4,20.08,18880000,940264,235066,,,win32-x64,node-v22.20.0
+2026-11-04T07:07:17.504Z,dev-laptop-01,11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz,8,,8,20.11,21100000,1049282,131160,,,win32-x64,node-v22.20.0

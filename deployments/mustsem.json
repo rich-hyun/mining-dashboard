@@ -1,0 +1,20 @@
+{
+  "network": "mustsem",
+  "chainId": 7601,
+  "contract": "MSTMiningReward",
+  "address": "0x9Bc4cFF515E47504DCa0e72676eFe3F13E616475",
+  "deployBlock": 13866797,
+  "deployTx": "0x4ff9a42d2510207294c46baccb8aa0b0348b14b1697ed6b1566628fb97e23059",
+  "admin": "0x299e421dEC65933Ed64E38ce16F536FE2271a2Ac",
+  "staking": "0x0000000000000000000000000000000000000000",
+  "params": {
+    "rewardPerShare": "1000000000000000000",
+    "dailyCapPerWallet": "50000000000000000000",
+    "epochCap": "500000000000000000000",
+    "targetInterval": "60",
+    "sharesPerEpoch": "30",
+    "minShareInterval": "60"
+  },
+  "initialTarget": "1929868153955269923726183083478131797554499744427342733990959733465218",
+  "deployedAt": "2026-11-04T07:30:12.192Z"
+}

@@ -1,0 +1,11 @@
+node_modules/
+artifacts/
+cache/
+# 비밀값: .env, .env.local 등 모두 제외 (예시 파일만 허용)
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+deployments/localhost.json
+deployments/hardhat.json
